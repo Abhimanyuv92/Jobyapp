@@ -1,0 +1,11 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+.not-found > p {
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+}

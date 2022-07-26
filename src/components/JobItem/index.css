@@ -1,0 +1,36 @@
+.job-item {
+  color: white;
+  background-color: #2c364c;
+  border: 1px solid #2c364c;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 20px 20px 0;
+  font-size: 14px;
+}
+
+.company-logo {
+  margin-right: 20px;
+}
+.company-logo > img {
+  width: 50px;
+}
+
+.job-item-title-header {
+  display: flex;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.star {
+  margin-right: 6px;
+}
+
+.job-item-card-details {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}

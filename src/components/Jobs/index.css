@@ -1,0 +1,65 @@
+.jobs {
+  display: flex;
+  padding: 30px;
+  background-color: black;
+}
+.left-panel {
+  /* width: 110%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.left-panel > hr {
+  width: 100%;
+}
+
+.right-panel {
+  margin-left: 30px;
+}
+
+.employment-type,
+.salary-range {
+  color: white;
+}
+
+.search-box {
+  background: black;
+  border: 1px solid #64748b;
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+  color: white;
+}
+
+.search {
+  background: #2c364c;
+  color: white;
+  font-size: 15px;
+  margin-left: -24px;
+  padding: 4px;
+  border: 1px solid #64748b;
+  border-width: 0px 0px 1px 0;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.no-jobs-found {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0 0 80px;
+}
+.no-jobs-found > p {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.no-jobs-found > div {
+  font-size: 10px;
+}
+
+.no-jobs-found > img {
+  width: 400px;
+}
