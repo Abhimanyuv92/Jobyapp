@@ -60,7 +60,7 @@ class Jobs extends Component {
   employeeTypeFilter = list => {
     console.log(list)
 
-    this.setState({employmentType: list.join(',')}, this.getJobsData)
+    this.setState({employmentType}, this.getJobsData)
   }
 
   salaryFilter = salaryValue => {

@@ -29,23 +29,6 @@ class EmploymentTypes extends Component {
     selectedEmploymentList: [],
   }
 
-  updateEmploymentList = (bool, typeOfEmployment) => {
-    const {selectedEmploymentList} = this.state
-    if (!bool) {
-      this.setState(prevState => ({
-        selectedEmploymentList: [
-          ...prevState.selectedEmploymentList,
-          typeOfEmployment,
-        ],
-      }))
-    } else {
-      const updatedList = selectedEmploymentList.filter(
-        each => each !== typeOfEmployment,
-      )
-      this.setState({selectedEmploymentList: updatedList})
-    }
-  }
-
   onChangeEmploymentType = event => {
     const {
       isCheckedfullTime,
@@ -56,37 +39,38 @@ class EmploymentTypes extends Component {
     } = this.state
 
     const {employeeTypeFilter} = this.props
+    employeeTypeFilter(event.target.value)
 
-    switch (event.target.value) {
-      case 'Full Time':
-        this.setState(
-          {isCheckedfullTime: !isCheckedfullTime},
-          this.updateEmploymentList(isCheckedfullTime, 'FULLTIME'),
-        )
-        break
-      case 'Part Time':
-        this.setState(
-          {isCheckedpartTime: !isCheckedpartTime},
-          this.updateEmploymentList(isCheckedpartTime, 'PARTTIME'),
-        )
-        break
-      case 'Internship':
-        this.setState(
-          {isCheckedinternship: !isCheckedinternship},
-          this.updateEmploymentList(isCheckedinternship, 'INTERNSHIP'),
-        )
+    // switch (event.target.value) {
+    //   case 'Full Time':
+    //     this.setState(
+    //       {isCheckedfullTime: !isCheckedfullTime},
+    //       this.updateEmploymentList(isCheckedfullTime, 'FULLTIME'),
+    //     )
+    //     break
+    //   case 'Part Time':
+    //     this.setState(
+    //       {isCheckedpartTime: !isCheckedpartTime},
+    //       this.updateEmploymentList(isCheckedpartTime, 'PARTTIME'),
+    //     )
+    //     break
+    //   case 'Internship':
+    //     this.setState(
+    //       {isCheckedinternship: !isCheckedinternship},
+    //       this.updateEmploymentList(isCheckedinternship, 'INTERNSHIP'),
+    //     )
 
-        break
-      case 'Freelance':
-        this.setState(
-          {isCheckedfreelance: !isCheckedfreelance},
-          this.updateEmploymentList(isCheckedfreelance, 'FREELANCE'),
-        )
-        break
-      default:
-        break
-    }
-    employeeTypeFilter(selectedEmploymentList)
+    //     break
+    //   case 'Freelance':
+    //     this.setState(
+    //       {isCheckedfreelance: !isCheckedfreelance},
+    //       this.updateEmploymentList(isCheckedfreelance, 'FREELANCE'),
+    //     )
+    //     break
+    //   default:
+    //     break
+    // }
+    // employeeTypeFilter(selectedEmploymentList)
   }
 
   render() {
@@ -94,12 +78,15 @@ class EmploymentTypes extends Component {
       <div className="employment-list">
         {employmentTypesList.map(each => (
           <div key={each.employmentTypeId}>
-            <input
-              type="checkbox"
-              value={each.label}
-              onChange={this.onChangeEmploymentType}
-            />
-            <span> {each.label}</span>
+            <label>
+              <input
+                type="radio"
+                label={each.label}
+                value={each.employmentTypeId}
+                onChange={this.onChangeEmploymentType}
+              />
+              {each.label}
+            </label>
           </div>
         ))}
       </div>
@@ -108,3 +95,20 @@ class EmploymentTypes extends Component {
 }
 
 export default EmploymentTypes
+
+// updateEmploymentList = (bool, typeOfEmployment) => {
+//     const {selectedEmploymentList} = this.state
+//     if (!bool) {
+//       this.setState(prevState => ({
+//         selectedEmploymentList: [
+//           ...prevState.selectedEmploymentList,
+//           typeOfEmployment,
+//         ],
+//       }))
+//     } else {
+//       const updatedList = selectedEmploymentList.filter(
+//         each => each !== typeOfEmployment,
+//       )
+//       this.setState({selectedEmploymentList: updatedList})
+//     }
+//   }

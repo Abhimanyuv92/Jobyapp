@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './index.css'
 import Cookies from 'js-cookie'
 import {AiOutlineStar} from 'react-icons/ai'
+import {Link} from 'react-router-dom'
 import Header from '../Header'
 import JobItem from '../JobItem'
 
@@ -93,7 +94,7 @@ class JobDetails extends Component {
         <p className="sub-heading">Similar Jobs</p>
         <div className="similar-jobs">
           {similarJobs.map(each => (
-            <div className="similar-job" key={each.id}>
+            <Link t0={`/jobs/${each.idSj}`} className="similar-job" key={each.id}>
               <div className="job-item-title-header">
                 <span className="company-logo">
                   <img
@@ -116,7 +117,7 @@ class JobDetails extends Component {
                 <div>{each.locationSj}</div>
                 <div>{each.employmentTypeSj}</div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
