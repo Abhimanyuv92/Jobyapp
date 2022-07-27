@@ -84,6 +84,7 @@ class EmploymentTypes extends Component {
                 label={each.label}
                 value={each.employmentTypeId}
                 onChange={this.onChangeEmploymentType}
+                name="employment_type"
               />
               {each.label}
             </label>
